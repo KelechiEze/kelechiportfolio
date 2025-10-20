@@ -108,7 +108,7 @@ All colors MUST be HSL.
 
   @media (max-width: 800px) {
     main {
-      padding: 0 1rem;
+      padding: 0 1.5rem; /* ⬅️ Increased from 1rem to 1.5rem for more breathing room */
       max-width: 100%;
       left: 0; /* ⬅️ REMOVE the left offset on mobile */
       width: 100%;
@@ -200,16 +200,17 @@ All colors MUST be HSL.
     color: hsl(var(--card-foreground));
     border-radius: var(--radius);
     border: 1px solid hsl(var(--border));
-    padding: 1.5rem;
+    padding: 2rem; /* ⬅️ Increased from 1.5rem for more breathing room */
     max-width: 100%; /* ⬅️ Prevent card overflow */
     overflow: hidden; /* ⬅️ Contain content within card */
+    margin-bottom: 1.5rem; /* ⬅️ Added spacing between cards */
   }
 
   .input {
     background-color: hsl(var(--background));
     border: 1px solid hsl(var(--input));
     border-radius: calc(var(--radius) - 2px);
-    padding: 0.5rem 0.75rem;
+    padding: 0.75rem 1rem; /* ⬅️ Increased padding for better touch targets */
     font-size: 0.875rem;
     color: hsl(var(--foreground));
     transition: border-color 0.2s ease-in-out;
@@ -229,9 +230,10 @@ All colors MUST be HSL.
     border-radius: calc(var(--radius) - 4px);
     font-size: 0.75rem;
     font-weight: 500;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem; /* ⬅️ Increased padding */
     max-width: 100%; /* ⬅️ Prevent badge overflow */
     white-space: nowrap; /* ⬅️ Prevent text wrapping issues */
+    margin: 0.25rem; /* ⬅️ Added spacing */
   }
 
   .badge-primary {
@@ -347,6 +349,38 @@ All colors MUST be HSL.
     overflow: hidden;
     max-width: 100%;
   }
+
+  /* GSAP Animation Classes */
+  .gsap-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .gsap-slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  .gsap-slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  .gsap-scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  .gsap-rotate-in {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+
+  /* Stagger animation for lists */
+  .stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 /* Scrollbar styling */
@@ -385,6 +419,16 @@ All colors MUST be HSL.
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .gsap-fade-in,
+  .gsap-slide-in-left,
+  .gsap-slide-in-right,
+  .gsap-scale-in,
+  .gsap-rotate-in,
+  .stagger-item {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
@@ -443,31 +487,34 @@ main {
   box-sizing: border-box;
 }
 
-/* Mobile adjustments */
+/* Mobile adjustments - EXPANDED FOR BETTER BREATHING ROOM */
 @media (max-width: 800px) {
   .profile-card {
-    position: fixed;
-    left: 1rem;
+    position: relative; /* ⬅️ Changed from fixed to relative */
+    left: auto;
     top: auto;
-    bottom: 2rem;
+    bottom: auto;
     transform: none;
     z-index: 100;
-    max-width: calc(100vw - 2rem); /* ⬅️ Account for reduced padding */
+    max-width: 100%;
+    width: 100%;
+    margin: 2rem 0; /* ⬅️ Added vertical spacing */
+    padding: 0 1rem; /* ⬅️ Added horizontal padding */
   }
   
   .sidebar {
-    position: fixed;
+    position: fixed; /* ⬅️ Keep sidebar fixed but adjusted */
     right: 1rem;
     top: auto;
     bottom: 2rem;
     transform: none;
     z-index: 100;
-    max-width: calc(100vw - 2rem); /* ⬅️ Account for reduced padding */
+    max-width: calc(100vw - 2rem);
   }
 
   main {
-    padding: 0 1rem;
-    left: 0; /* ⬅️ CRITICAL: Remove the left offset on mobile */
+    padding: 0 1.5rem; /* ⬅️ Increased padding for breathing room */
+    left: 0;
     width: 100%;
     margin: 0;
   }
@@ -480,28 +527,75 @@ main {
     max-width: 100vw;
   }
   
-  /* Ensure all containers don't exceed viewport */
+  /* Ensure all containers don't exceed viewport - EXPANDED SPACING */
   .container, .section-content, .hero-section, .about-section, 
   .skills-section, .projects-section, .services-section, 
   .testimonials-section, .pricing-section, .contact-section {
     max-width: 100%;
     overflow-x: hidden;
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.5rem; /* ⬅️ Reduced container padding */
+    padding-right: 0.5rem;
     box-sizing: border-box;
   }
 
+  /* Expanded card spacing on mobile */
+  .card {
+    padding: 1.5rem; /* ⬅️ Slightly reduced but still spacious */
+    margin-bottom: 2rem; /* ⬅️ Increased spacing between cards */
+    border-radius: 1rem; /* ⬅️ Slightly larger radius for modern look */
+  }
+
+  /* Better button sizing for mobile */
+  .btn {
+    padding: 0.75rem 1.5rem; /* ⬅️ Larger touch targets */
+    font-size: 1rem; /* ⬅️ Better readability */
+    margin: 0.5rem 0; /* ⬅️ Added spacing */
+  }
+
+  /* Improved input fields */
+  .input {
+    padding: 1rem; /* ⬅️ Larger padding for better usability */
+    font-size: 1rem; /* ⬅️ Better readability */
+    margin: 0.5rem 0; /* ⬅️ Added spacing */
+  }
+
+  /* Better section spacing */
+  .hero-section,
+  .about-section,
+  .skills-section,
+  .projects-section,
+  .services-section,
+  .testimonials-section,
+  .pricing-section,
+  .contact-section {
+    padding: 3rem 0; /* ⬅️ Increased vertical padding */
+    margin: 1rem 0; /* ⬅️ Added margin between sections */
+  }
+
+  /* Improved typography spacing */
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem; /* ⬅️ Added spacing below headings */
+  }
+
+  p {
+    margin-bottom: 1.5rem; /* ⬅️ Added spacing below paragraphs */
+    line-height: 1.7; /* ⬅️ Better line height for readability */
+  }
+
   /* Additional mobile-specific fixes */
-  .card, .btn, .input, .badge {
-    max-width: 100%;
-    width: auto;
+  .badge {
+    padding: 0.5rem 1rem; /* ⬅️ Larger badges */
+    font-size: 0.875rem; /* ⬅️ Better readability */
+    margin: 0.25rem; /* ⬅️ Consistent spacing */
   }
 
   /* Prevent images from causing overflow */
   img {
     max-width: 100%;
     height: auto;
+    border-radius: 0.5rem; /* ⬅️ Added subtle rounding */
+    margin: 1rem 0; /* ⬅️ Added spacing around images */
   }
 }
 
@@ -523,4 +617,33 @@ body {
 body > * {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+/* GSAP Animation Enhancements */
+.gsap-animated {
+  will-change: transform, opacity;
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus states for better accessibility */
+.btn:focus-visible,
+.input:focus-visible,
+.card:focus-visible {
+  outline: 2px solid hsl(var(--accent));
+  outline-offset: 2px;
+}
+
+/* Hover effects for interactive elements */
+.card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
 }
