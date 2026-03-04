@@ -5,35 +5,47 @@ import './Projects.css';
 const projects = [
   {
     id: 1,
-    title: 'X-direct Mobile',
-    category: 'Mobile App Design',
+    title: 'Elite Gaming',
+    category: 'Gaming Platform',
     date: 'May 2024',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
+    description: 'Gaming',
+    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80', // Gaming setup image
+    link: 'https://elitegamerz.netlify.app/', // Replace with actual link
   },
   {
     id: 2,
-    title: 'Website Design',
-    category: 'Website Design',
+    title: 'Cinema Stream',
+    category: 'Movie Streaming',
     date: 'Apr 2024',
-    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
+    description: 'Movies',
+    image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&q=80', // Cinema/movies image
+    link: 'https://cinemastreamz.netlify.app/', // Replace with actual link
   },
   {
     id: 3,
-    title: 'BLACK VOGUE',
-    category: 'Brand Identity',
+    title: 'Aerologistics',
+    category: 'Aviation Logistics',
     date: 'Mar 2024',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80',
+    description: 'Aerologistics',
+    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80', // Aviation/airplane image
+    link: 'https://aerologistics.netlify.app/', // Replace with actual link
   },
   {
     id: 4,
-    title: 'SF Portfolio',
-    category: 'UI/UX Design',
+    title: 'LogiExpress',
+    category: 'Logistics Express',
     date: 'Feb 2024',
-    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80',
+    description: 'Logistics Express',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80', // Logistics/delivery image
+    link: 'https://logixpres.netlify.app/', // Replace with actual link
   },
 ];
 
 const Projects = () => {
+  const handleProjectClick = (link: string) => {
+    window.open(link, '_blank', 'noopener noreferrer');
+  };
+
   return (
     <section id="projects" className="projects-section">
       <div className="projects-content">
@@ -64,7 +76,8 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Behind every great design is an even greater story. Every design has a starting point, and for truly impactful visuals, it's the narrative that guides the creative process.
+          Behind every great project is an even greater story. Every application has a starting point, 
+          and for truly impactful digital experiences, it's the user needs that guide the development process.
         </motion.p>
 
         <motion.div
@@ -83,11 +96,20 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 * index }}
               whileHover={{ scale: 1.02, y: -4 }}
+              onClick={() => handleProjectClick(project.link)}
+              style={{ cursor: 'pointer' }}
             >
               <div className="project-image-wrapper">
                 <img src={project.image} alt={project.title} className="project-image" />
                 <div className="project-overlay">
-                  <button className="project-view-button">
+                  <button 
+                    className="project-view-button"
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent triggering the card's onClick
+                      handleProjectClick(project.link);
+                    }}
+                    aria-label={`View ${project.title} project`}
+                  >
                     <ArrowUpRight size={20} />
                   </button>
                 </div>
@@ -98,6 +120,7 @@ const Projects = () => {
                   <span className="project-date">{project.date}</span>
                 </div>
                 <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
               </div>
             </motion.div>
           ))}

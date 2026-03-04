@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useInView } from 'react-spring';
 import './About.css';
 
 const About = () => {
@@ -23,9 +22,9 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          Crafting Digital
+          Front-End Developer
           <br />
-          Experiences with Purpose
+          with an Eye for Design
         </motion.h2>
 
         <motion.div
@@ -36,17 +35,21 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p>
-            I'm a digital designer and developer based in San Francisco, specializing in creating
-            intuitive and engaging web experiences. With a focus on minimalism and functionality,
-            I bring ideas to life through clean code and thoughtful design.
+            I'm a front-end developer based in Lagos, Nigeria, specializing in building 
+            beautiful, responsive user interfaces. With expertise in React, TypeScript, 
+            and modern CSS, I transform designs into interactive web experiences that 
+            engage and delight users.
           </p>
           <p>
-            My approach combines strategic thinking with creative execution, ensuring that every
-            project not only looks beautiful but also delivers measurable results for your business.
+            My focus is on writing clean, efficient code while ensuring pixel-perfect 
+            implementation of UI designs. I'm passionate about creating accessible, 
+            performant interfaces that work seamlessly across all browsers and devices, 
+            with special attention to animation and micro-interactions.
           </p>
           <p>
-            Currently available for select freelance projects and collaborations with forward-thinking
-            brands who value quality over quantity.
+            Currently available for front-end development projects and collaborations 
+            with designers and businesses looking to bring their creative visions to 
+            life through code.
           </p>
         </motion.div>
 
@@ -58,16 +61,16 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <div className="stat-card">
-            <div className="stat-number">50+</div>
-            <div className="stat-label">Projects Completed</div>
+            <div className="stat-number">2+</div>
+            <div className="stat-label">Years Coding</div>
           </div>
           <div className="stat-card">
-            <div className="stat-number">5+</div>
-            <div className="stat-label">Years Experience</div>
+            <div className="stat-number">25+</div>
+            <div className="stat-label">Projects Built</div>
           </div>
           <div className="stat-card">
-            <div className="stat-number">30+</div>
-            <div className="stat-label">Happy Clients</div>
+            <div className="stat-number">10+</div>
+            <div className="stat-label">Frameworks</div>
           </div>
         </motion.div>
       </div>

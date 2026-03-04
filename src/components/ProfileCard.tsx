@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { X, Dribbble, Instagram, Facebook, ArrowUpRight } from 'lucide-react';
+import { X, Linkedin, Instagram, Music2, ArrowUpRight } from 'lucide-react';
 import './ProfileCard.css';
 
 interface ProfileCardProps {
@@ -8,7 +8,7 @@ interface ProfileCardProps {
 
 const ProfileCard = ({ isVisible = true }: ProfileCardProps) => {
   // Image path defined inside the component
-  const profileImage = '/jaydenimage.jpg'; // Make sure this image is in your public folder
+  const profileImage = '/eze.png'; // Make sure this image is in your public folder
 
   return (
     <motion.aside
@@ -46,17 +46,17 @@ const ProfileCard = ({ isVisible = true }: ProfileCardProps) => {
 
         {/* Social Icons */}
         <div className="social-icons">
-          <a href="#" className="social-icon" aria-label="X (Twitter)">
+          <a href="https://x.com/babylee_the543" className="social-icon" aria-label="X (Twitter)">
             <X size={18} />
           </a>
-          <a href="#" className="social-icon" aria-label="Dribbble">
-            <Dribbble size={18} />
+          <a href="https://www.linkedin.com/in/kelechi-joseph-934449340/" className="social-icon" aria-label="LinkedIn">
+            <Linkedin size={18} />
           </a>
           <a href="#" className="social-icon" aria-label="Instagram">
             <Instagram size={18} />
           </a>
-          <a href="#" className="social-icon" aria-label="Facebook">
-            <Facebook size={18} />
+          <a href="#" className="social-icon" aria-label="TikTok">
+            <Music2 size={18} />
           </a>
         </div>
 

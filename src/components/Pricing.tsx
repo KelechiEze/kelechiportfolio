@@ -6,6 +6,10 @@ import './Pricing.css';
 const Pricing = () => {
   const [activePlan, setActivePlan] = useState<'standard' | 'premium'>('standard');
 
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="pricing" className="pricing-section">
       <div className="pricing-content">
@@ -69,8 +73,8 @@ const Pricing = () => {
           </div>
 
           <div className="pricing-amount">
-            <span className="price">${activePlan === 'standard' ? '49' : '89'}</span>
-            <span className="price-unit">/ hours</span>
+            <span className="price">${activePlan === 'standard' ? '250' : '550'}</span>
+            <span className="price-unit">/project </span>
           </div>
 
           <ul className="features-list">
@@ -100,6 +104,7 @@ const Pricing = () => {
             className="get-started-button"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={scrollToContact}
           >
             <span>Get Started</span>
             <div className="arrow-icon">
@@ -111,6 +116,7 @@ const Pricing = () => {
             className="custom-quote-button"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={scrollToContact}
           >
             <span>Custom Quote</span>
             <div className="arrow-icon-dark">

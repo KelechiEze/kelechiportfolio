@@ -11,7 +11,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          San Francisco, CA {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
+          Lagos, NG {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
         </motion.div>
 
         <motion.div
@@ -20,7 +20,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          • Introduction
+          • Web Developer & UI Engineer
         </motion.div>
 
         <motion.h1
@@ -29,9 +29,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Making Your World a Pain
+          Building Modern Web
           <br />
-          Free Experience
+          Experiences with Code
         </motion.h1>
 
         <motion.div
@@ -40,8 +40,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <p>My passion lies in crafting elegant, straightforward digital experiences.</p>
-          <p>It's a love for simplicity, pure and simple</p>
+          <p>I specialize in creating responsive, performant web applications</p>
+          <p>using React, TypeScript, and modern frontend technologies.</p>
         </motion.div>
 
         <motion.div
@@ -50,10 +50,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
         >
-          <span className="hero-tag">Branding</span>
-          <span className="hero-tag">Art Direction</span>
-          <span className="hero-tag">UI Design</span>
-          <span className="hero-tag">Webflow Development</span>
+          <span className="hero-tag">React</span>
+          <span className="hero-tag">TypeScript</span>
+          <span className="hero-tag">Next.js</span>
+          <span className="hero-tag">UI/UX Design</span>
         </motion.div>
       </div>
     </section>
